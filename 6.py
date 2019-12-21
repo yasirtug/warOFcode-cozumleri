@@ -11,20 +11,11 @@ def altkume(kalansayilar, eldeki):
     if(toplam == olacaktoplam):
         diziler.append(eldeki)
     for i in kalansayilar:
-        yenikalan = kalansayilar.copy()
-        yenikalan.remove(i)
+        yenikalan = kalansayilar[kalansayilar.index(i)+ 1:]
         yenieldeki = eldeki.copy()
         yenieldeki.append(i)
         altkume(yenikalan, yenieldeki)
 
 altkume(liste, [])
-resultdizi = []
-var = False
-for i in diziler:
-    var = False
-    for j in resultdizi:
-        if(set(i) == set(j)):
-            var = True
-    if(not var):
-        resultdizi += [i]
-print(resultdizi)
+
+print(diziler)
